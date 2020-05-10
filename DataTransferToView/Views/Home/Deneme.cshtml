@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Deneme</title>
+</head>
+<body>
+    <h3>
+        TempData'dan okunan liste
+    </h3>
+    <table cellpadding="3" cellspacing="3" border="3" width="300">
+        <!-- TempData bir kez bir yerde yazdırılırsa başka bir sayfada tekrar kullanılamaz. -->
+        <tr>
+            <td>Kategori Id</td>
+            <td>Kategori Adı</td>
+            <td>Açıklaması</td>
+        </tr>
+        @foreach (var item in TempData["tempKategori"] as List<DataTransferToView.Models.Kategori>)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Adi</td>
+                <td>@item.Aciklama</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
